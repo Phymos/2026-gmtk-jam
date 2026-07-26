@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 lastMoveDirection;
     
     private Vector2 mousePos;
+    public Animator animator;
+
+    public Transform aimPivot;
 
     void Update()
     {
@@ -22,16 +25,20 @@ public class PlayerMovement : MonoBehaviour
         
         Vector2 screenPos = Mouse.current.position.ReadValue();
         mousePos = cam.ScreenToWorldPoint(screenPos);
+
+        Vector2 aimDir = (mousePos - (Vector2)transform.position).normalized;
+
+        animator.SetFloat("AimX", aimDir.x);
+        animator.SetFloat("AimY", aimDir.y);
+
+        Vector2 lookDir = mousePos - (Vector2)aimPivot.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        aimPivot.rotation = Quaternion.Euler(0, 0, angle);
     } 
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
-
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-
-        rb.MoveRotation(angle); 
     }
 
     public void OnMove(InputAction.CallbackContext context)
