@@ -7,13 +7,21 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Camera cam;
 
-    private Vector2 movementInput;
+    [HideInInspector]
+    public Vector2 movementInput;
+    public Vector2 lastMoveDirection;
+    
     private Vector2 mousePos;
 
     void Update()
     {
+        if (movementInput != Vector2.zero)
+        {
+            lastMoveDirection = movementInput;
+        }
+        
         Vector2 screenPos = Mouse.current.position.ReadValue();
-        mousePos = cam.ScreenToWorldPoint(screenPos);;
+        mousePos = cam.ScreenToWorldPoint(screenPos);
     } 
 
     void FixedUpdate()
