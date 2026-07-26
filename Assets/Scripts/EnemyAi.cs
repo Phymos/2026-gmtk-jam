@@ -21,8 +21,8 @@ public class EnemyAi : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             PlayerStats playerStats = collision.collider.GetComponent<PlayerStats>();
-            playerStats.health -= 1;
-            if (playerStats.health <= 0)
+            playerStats.currentHealth -= 1;
+            if (playerStats.currentHealth <= 0)
             {
                 GameManager.Instance.GameOver();
             }
