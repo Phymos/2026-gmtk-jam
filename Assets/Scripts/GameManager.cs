@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public float timeCount = 60f;
     public int displayCooldown;
+    public GameObject panel;
 
     public static GameManager Instance;
 
@@ -31,7 +32,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        
+        panel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void AddTime(float time)

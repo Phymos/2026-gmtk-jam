@@ -12,4 +12,13 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.GameOver();
+        }
+    }
 }
