@@ -7,6 +7,6 @@ public class BulletSpeed : AbilitySO
     public override void Activate(Transform player)
     {
         Shooting shooting = player.GetComponent<Shooting>();
-        shooting.bulletForce += 5;
+        shooting.bulletForce += increaseAmount;
     }
 }
