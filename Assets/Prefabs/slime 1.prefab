@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6226505580228951893
+--- !u!1 &2115200066140729779
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5581809138404976375}
-  - component: {fileID: 7187669286410633751}
-  - component: {fileID: -8006566268519788688}
-  - component: {fileID: -548250877695013844}
-  - component: {fileID: 433356835982928010}
-  - component: {fileID: 3143637890375034323}
+  - component: {fileID: 4838175465256281441}
+  - component: {fileID: 7427565403404650713}
+  - component: {fileID: 4692594582517752774}
+  - component: {fileID: 5380858245671125788}
+  - component: {fileID: 423124175709623516}
+  - component: {fileID: 197854141295388003}
   m_Layer: 0
   m_Name: slime 1
   m_TagString: Enemy
@@ -21,29 +21,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5581809138404976375
+--- !u!4 &4838175465256281441
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.47, y: -1.68, z: 0}
+  m_LocalPosition: {x: -10.200521, y: -2.9670506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7187669286410633751
+--- !u!212 &7427565403404650713
 SpriteRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -96,29 +96,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &-8006566268519788688
+--- !u!114 &4692594582517752774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb2cce64cf7a1b940b5b33a812434a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
   playerRb: {fileID: 0}
-  rb: {fileID: 3143637890375034323}
+  rb: {fileID: 197854141295388003}
   MoveSpeed: 5
   addedTime: 2
---- !u!114 &-548250877695013844
+--- !u!114 &5380858245671125788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 481a7977a987e1a4f962506777a44a0a, type: 3}
@@ -127,13 +127,13 @@ MonoBehaviour:
   health: 2
   damage: 1
   addedTime: 2
---- !u!58 &433356835982928010
+--- !u!58 &423124175709623516
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -163,14 +163,14 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: 0}
   m_Radius: 0.4869957
---- !u!50 &3143637890375034323
+--- !u!50 &197854141295388003
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226505580228951893}
+  m_GameObject: {fileID: 2115200066140729779}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0

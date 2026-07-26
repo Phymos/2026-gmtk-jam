@@ -12,31 +12,18 @@ public class Shooting : MonoBehaviour
     public float shotCooldown = 0.3f;
 
     public float cooldownTimer = 0f;
-    private bool wantsToShoot = false;
 
     void Update()
     {
-        if (cooldownTimer > 0f)
-        {
-            cooldownTimer -= Time.deltaTime;
-        }
-
-        if (wantsToShoot && cooldownTimer <= 0f)
-        {
-            Shoot();
-            cooldownTimer = shotCooldown;
-        }
+        cooldownTimer -= Time.deltaTime;
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && cooldownTimer <= 0f)
         {
-            wantsToShoot = true;
-        }
-        else if (context.canceled)
-        {
-            wantsToShoot = false;
+            Shoot();
+            cooldownTimer = shotCooldown;
         }
     }
 
@@ -52,7 +39,7 @@ public class Shooting : MonoBehaviour
 
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rot);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(rot * Vector2.up * bulletForce, ForceMode2D.Impulse);
+            rb.AddForce(rot * Vector2.right * bulletForce, ForceMode2D.Impulse);
         }
     }
 }

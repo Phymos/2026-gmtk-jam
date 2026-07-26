@@ -10,6 +10,7 @@ public class EnemyAi : MonoBehaviour
 
     void Start()
     {
+        playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
         enemyStats = GetComponent<EnemyStats>();
     }
 
