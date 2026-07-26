@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     public int shotCount = 1;
     public float spreadAngle = 30f;
+    public float shotCooldown = 0.3f;
 
     void Update()
     {
