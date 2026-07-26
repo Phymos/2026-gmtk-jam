@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float Time = 60f;
+    public float timeCount = 60f;
+    public int displayCooldown;
 
     public static GameManager Instance;
 
@@ -15,6 +16,17 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        displayCooldown = Mathf.CeilToInt(timeCount);
+    }
+
+    void Update()
+    {
+        timeCount -= Time.deltaTime;
+        displayCooldown = Mathf.CeilToInt(timeCount);
     }
 
     public void GameOver()
