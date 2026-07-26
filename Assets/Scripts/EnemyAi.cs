@@ -5,6 +5,7 @@ public class EnemyAi : MonoBehaviour
     public Rigidbody2D playerRb;
     public Rigidbody2D rb;
     public float MoveSpeed = 5f;
+    public float addedTime = 2f;
 
     void FixedUpdate()
     {
