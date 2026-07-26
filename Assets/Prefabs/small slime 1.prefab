@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481a7977a987e1a4f962506777a44a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  health: 2
+  health: 1
   damage: 1
   addedTime: 2
 --- !u!58 &1068981265442506008

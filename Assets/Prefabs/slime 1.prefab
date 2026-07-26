@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481a7977a987e1a4f962506777a44a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  health: 2
-  damage: 1
-  addedTime: 2
+  health: 5
+  damage: 2
+  addedTime: 10
 --- !u!58 &423124175709623516
 CircleCollider2D:
   m_ObjectHideFlags: 0

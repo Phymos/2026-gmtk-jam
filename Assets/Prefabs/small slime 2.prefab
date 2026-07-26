@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   health: 2
   damage: 1
-  addedTime: 2
+  addedTime: 3
 --- !u!58 &1140664747924105595
 CircleCollider2D:
   m_ObjectHideFlags: 0

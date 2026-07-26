@@ -15,8 +15,6 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Current Health: " + currentHealth);
-
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
