@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class MovementSpeed : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/MovementSpeed")]
+public class MovementSpeed : AbilitySO
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Activate(Transform player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerMovement movement = player.GetComponent<PlayerMovement>();
+        movement.moveSpeed += 2f;
     }
 }

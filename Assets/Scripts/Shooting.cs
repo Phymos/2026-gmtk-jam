@@ -11,16 +11,32 @@ public class Shooting : MonoBehaviour
     public float spreadAngle = 30f;
     public float shotCooldown = 0.3f;
 
+    public float cooldownTimer = 0f;
+    private bool wantsToShoot = false;
+
     void Update()
     {
-        
+        if (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+
+        if (wantsToShoot && cooldownTimer <= 0f)
+        {
+            Shoot();
+            cooldownTimer = shotCooldown;
+        }
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Shoot();
+            wantsToShoot = true;
+        }
+        else if (context.canceled)
+        {
+            wantsToShoot = false;
         }
     }
 
@@ -29,8 +45,14 @@ public class Shooting : MonoBehaviour
         float startAngle = shotCount > 1 ? -spreadAngle / 2f : 0f;
         float angleStep = shotCount > 1 ? spreadAngle / (shotCount - 1) : 0f;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        for (int i = 0; i < shotCount; i++)
+        {
+            float angle = startAngle + angleStep * i;
+            Quaternion rot = firePoint.rotation * Quaternion.Euler(0, 0, angle);
+
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rot);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(rot * Vector2.up * bulletForce, ForceMode2D.Impulse);
+        }
     }
 }
